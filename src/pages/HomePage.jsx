@@ -5,7 +5,7 @@ import { Header } from "../components/Header";
 import { QueryInput } from "../components/QueryInput";
 import { ResponseDisplay } from "../components/ResponseDisplay";
 import { TableView } from "../components/TableView";
-import { MockDataAPI } from "../api/MockDataApi";
+import { MockDataAPI } from "../api/MockData_Api";
 
 const HomePage = () => {
   const [loading, setLoading] = useState(false);
