@@ -5,7 +5,7 @@ import { Header } from "../components/Header";
 import { QueryInput } from "../components/QueryInput";
 import { ResponseDisplay } from "../components/ResponseDisplay";
 import { TableView } from "../components/TableView";
-import { MockDataAPI } from "../api/MockData_Api";
+import { QueryDataAPI } from "../api/QueryData_Api";
 
 const HomePage = () => {
   const [loading, setLoading] = useState(false);
@@ -13,7 +13,7 @@ const HomePage = () => {
 
   const handleQuerySubmit = async (query) => {
     setLoading(true);
-    const data = await MockDataAPI(query);
+    const data = await QueryDataAPI(query);
     setResponseData(data);
     setLoading(false);
   };

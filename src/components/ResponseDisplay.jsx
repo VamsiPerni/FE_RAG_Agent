@@ -16,7 +16,9 @@ const ResponseDisplay = (props) => {
     <div className="bg-slate-900 py-10 px-4">
       <div className="bg-white rounded-2xl shadow-xl p-8 max-w-4xl mx-auto">
         <h3 className="text-xl font-semibold text-gray-800 mb-4">📄 Summary</h3>
-        <p className="text-gray-700 mb-6">{data.summary}</p>
+        <p className="text-gray-700 mb-6">
+          {data.summary || "No summary provided."}
+        </p>
 
         {data.response_type === "table" && (
           <TableView columns={data.columns} rows={data.data} />

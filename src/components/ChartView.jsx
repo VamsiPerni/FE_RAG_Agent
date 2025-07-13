@@ -8,6 +8,7 @@ import {
   Legend,
   ArcElement,
 } from "chart.js";
+
 import { Bar, Pie } from "react-chartjs-2";
 
 ChartJS.register(
@@ -19,7 +20,6 @@ ChartJS.register(
   Legend,
   ArcElement
 );
-
 const ChartView = ({ chart }) => {
   const isValidChart =
     chart &&
@@ -28,14 +28,13 @@ const ChartView = ({ chart }) => {
     chart.labels.length === chart.values.length &&
     chart.labels.length > 0;
 
-  if (!isValidChart) {
-    return null;
-  }
+  if (!isValidChart) return null;
+
   const data = {
     labels: chart.labels,
     datasets: [
       {
-        label: "Value",
+        label: chart.label || "Value",
         data: chart.values,
         backgroundColor: ["#6366F1", "#818CF8", "#A5B4FC", "#C084FC"],
         borderRadius: 5,
