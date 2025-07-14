@@ -23,6 +23,15 @@ const QueryDataAPI = async (query) => {
     };
   } catch (err) {
     console.error("QueryDataAPI error:", err);
+
+    if (err.message?.includes("Failed to fetch") || err.name === "TypeError") {
+      alert(
+        "We couldn’t fetch the data, RENDER takes some time to start . Please try using a different Gmail account or come back later."
+      );
+    } else {
+      alert("An error occurred while fetching data. Please try again later.");
+    }
+
     return {
       summary: "Error fetching data.",
       response_type: "text",
