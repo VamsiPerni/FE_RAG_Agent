@@ -29,7 +29,9 @@ const QueryDataAPI = async (query) => {
         "We couldn’t fetch the data, RENDER takes some time to start . Please try using a different Gmail account or come back later."
       );
     } else {
-      alert("An error occurred while fetching data. Please try again later.");
+      alert(
+        `Ask the Question that can be given in Charts & Tables , LLM is unable to transform the question to the JSON format which is required to show`
+      );
     }
 
     return {
